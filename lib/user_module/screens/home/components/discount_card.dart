@@ -13,17 +13,17 @@ class DiscountCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
         children: [
-          Text(
+          const Text(
             "Discount and offer",
             style: TextStyle(fontWeight: FontWeight.bold, color: TextColor),
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 20),
+            margin: const EdgeInsets.symmetric(vertical: 20),
             width: double.infinity,
             height: 120,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
+              image: const DecorationImage(
                 fit: BoxFit.fill,
                 image: AssetImage("assets/images/beyond-meat-mcdonalds.png"),
               ),
@@ -33,7 +33,7 @@ class DiscountCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   gradient: LinearGradient(
                     colors: [
-                      Color(0xFFFF961F).withOpacity(0.7),
+                      const Color(0xFFFF961F).withOpacity(0.7),
                       yPrimaryColor.withOpacity(0.7),
                     ],
                   ),
@@ -44,7 +44,7 @@ class DiscountCard extends StatelessWidget {
                         child: SvgPicture.asset("assets/icons/macdonalds.svg")),
                     Expanded(
                       child: RichText(
-                        text: TextSpan(
+                        text: const TextSpan(
                             style: TextStyle(color: Colors.white),
                             children: [
                               TextSpan(

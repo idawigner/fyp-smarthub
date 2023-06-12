@@ -16,10 +16,7 @@ class CategoryList extends StatelessWidget {
           CategoryItem(title: "Food stores", isActive: true, press: () {}),
           CategoryItem(title: "Grocery stores", press: () {}),
           CategoryItem(title: "Medical stores", press: () {}),
-          CategoryItem(title: "Medical stores", press: () {}),
-          CategoryItem(title: "Medical stores", press: () {}),
-          CategoryItem(title: "Medical stores", press: () {}),
-          CategoryItem(title: "Medical stores", press: () {}),
+          CategoryItem(title: "Online stores", press: () {}),
         ],
       ),
     );

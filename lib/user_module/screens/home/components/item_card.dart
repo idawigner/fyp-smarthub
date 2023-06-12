@@ -16,17 +16,17 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //this size provide us the total height of the screen
-    Size size = MediaQuery.of(context).size;
+    // Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(left: 20, right: 15, top: 20, bottom: 20),
+      margin: const EdgeInsets.only(left: 20, right: 15, top: 20, bottom: 20),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              offset: Offset(0, 4),
+              offset: const Offset(0, 4),
               blurRadius: 20,
-              color: Color(0xFFB0CCE1).withOpacity(0.32),
+              color: const Color(0xFFB0CCE1).withOpacity(0.32),
             ),
           ]),
       child: Material(
@@ -34,11 +34,11 @@ class ItemCard extends StatelessWidget {
         child: InkWell(
           onTap: press,
           child: Padding(
-            padding: EdgeInsets.all(20.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.only(bottom: 15),
+                  padding: const EdgeInsets.only(bottom: 15),
                   decoration: BoxDecoration(
                     color: yPrimaryColor.withOpacity(0.13),
                     shape: BoxShape.circle,
@@ -50,7 +50,7 @@ class ItemCard extends StatelessWidget {
                   ),
                 ),
                 Text(title),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Text(shopName),

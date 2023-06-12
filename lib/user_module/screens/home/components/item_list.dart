@@ -16,19 +16,25 @@ class ItemList extends StatelessWidget {
             SvgSrc: "assets/images/3.png",
             title: "Your Favourite food",
             shopName: "Near By",
-            press: () {},
+            press: () {
+              Navigator.pushNamed(context, '/details');
+            },
           ),
           ItemCard(
             SvgSrc: "assets/images/1.png",
             title: "Buy What you want",
             shopName: "Near By",
-            press: () {},
+            press: () {
+              Navigator.pushNamed(context, '/details');
+            },
           ),
           ItemCard(
             SvgSrc: "assets/images/2.png",
             title: "Health is Important",
             shopName: "Medical shops",
-            press: () {},
+            press: () {
+              Navigator.pushNamed(context, '/details');
+            },
           ),
           ItemCard(
             SvgSrc: "assets/images/2.png",

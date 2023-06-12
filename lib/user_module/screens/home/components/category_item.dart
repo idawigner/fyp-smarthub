@@ -23,15 +23,15 @@ class CategoryItem extends StatelessWidget {
             Text(
               title,
               style: isActive
-                  ? TextStyle(
+                  ? const TextStyle(
                       color: TextColor,
                       fontWeight: FontWeight.bold,
                     )
-                  : TextStyle(fontSize: 12),
+                  : const TextStyle(fontSize: 12),
             ),
             if (isActive)
               Container(
-                margin: EdgeInsets.symmetric(vertical: 5),
+                margin: const EdgeInsets.symmetric(vertical: 5),
                 height: 3,
                 width: 22,
                 decoration: BoxDecoration(
