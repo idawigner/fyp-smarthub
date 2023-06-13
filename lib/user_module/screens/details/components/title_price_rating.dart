@@ -14,6 +14,7 @@ class TitlePriceRating extends StatelessWidget {
     required this.numOfReviews,
     required this.rating,
     required this.name,
+    required Null Function(dynamic value) onRatingChanged,
     // this.onRatingChanged,
   }) : super(key: key);
 

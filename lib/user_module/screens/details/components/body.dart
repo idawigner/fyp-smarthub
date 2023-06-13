@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 import 'package:smarthub/constant.dart';
+import 'package:smarthub/user_module/screens/details/components/item_image.dart';
+import 'package:smarthub/user_module/screens/details/components/order_button.dart';
 
 class Body extends StatelessWidget {
-  const Body({super.key});
+  // ignore: use_key_in_widget_constructors
+  const Body({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-        // children: <Widget>[
-        //   ItemImage(
-        //     imgSrc: "assets/images/burger.png",
-        //   ),
-        //   Expanded(
-        //     child: ItemInfo(),
-        //   ),
-        // ],
-        );
+    return Column(
+      children: <Widget>[
+        const ItemImage(
+          key: ValueKey('item_image'),
+          imgSrc: "assets/images/burger.png",
+        ),
+        Expanded(
+          child: ItemInfo(
+            key: UniqueKey(),
+          ),
+        ),
+      ],
+    );
   }
 }
 
@@ -41,13 +48,21 @@ class ItemInfo extends StatelessWidget {
       child: Column(
         children: <Widget>[
           shopeName(name: "MacDonalds"),
-          // TitlePriceRating(
-          //   name: "Cheese Burger",
-          //   numOfReviews: 24,
-          //   rating: 4,
-          //   price: 15,
-          //   onRatingChanged: (value) {},
-          // ),
+          RatingBar.builder(
+            initialRating: 4,
+            minRating: 1,
+            direction: Axis.horizontal,
+            allowHalfRating: true,
+            itemCount: 5,
+            itemSize: 20,
+            itemBuilder: (context, _) => const Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+            onRatingUpdate: (rating) {
+              // Handle the rating update
+            },
+          ),
           const Text(
             "Nowadays, making printed materials have become fast, easy and simple. If you want your promotional material to be an eye-catching object, you should make it colored. By way of using inkjet printer this is not hard to make. An inkjet printer is any printer that places extremely small droplets of ink onto paper to create an image.",
             style: TextStyle(
@@ -55,11 +70,11 @@ class ItemInfo extends StatelessWidget {
             ),
           ),
           SizedBox(height: size.height * 0.1),
-          // Free space  10% of total height
-          // OrderButton(
-          //   size: size,
-          //   press: () {},
-          // )
+          OrderButton(
+            key: UniqueKey(),
+            size: size,
+            press: () {},
+          )
         ],
       ),
     );
