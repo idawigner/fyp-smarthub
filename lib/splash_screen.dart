@@ -22,11 +22,14 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 25),
-          child: Image.asset(
-            'assets/gifs/sh-clogo-ffffff-600x300.gif',
-            fit: BoxFit.fitWidth,
+        child: FractionallySizedBox(
+          widthFactor: 0.8,
+          child: Align(
+            alignment: Alignment.center,
+            child: Image.asset(
+              'assets/gifs/sh-clogo-ffffff-600x300.gif',
+              fit: BoxFit.fitWidth,
+            ),
           ),
         ),
       ),

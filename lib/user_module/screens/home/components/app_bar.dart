@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:smarthub/constant.dart';
+import 'package:flutter_svg/svg.dart';
 
 AppBar homeAppBar(BuildContext context) {
   return AppBar(
@@ -11,7 +12,6 @@ AppBar homeAppBar(BuildContext context) {
       onPressed: () {},
     ),
     title: RichText(
-      textAlign: TextAlign.justify,
       text: TextSpan(
         style: Theme.of(context)
             .textTheme

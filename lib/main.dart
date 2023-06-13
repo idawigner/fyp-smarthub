@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:smarthub/constant.dart';
-import 'package:smarthub/splash_screen.dart';
-import 'package:smarthub/user_module/screens/details/details_screen.dart';
-import 'package:smarthub/user_module/screens/home/home_screen.dart';
+import 'package:smarthub/user_module/components/user_app_routes.dart';
 
 // void main() => runApp(const MyApp());
 void main() {
@@ -21,37 +20,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Smart Hub',
-        theme: ThemeData(
-          // Define the default brightness and colors.
-          brightness: Brightness.light,
-          primaryColor: yPrimaryColor,
-          scaffoldBackgroundColor: Colors.white,
+      debugShowCheckedModeBanner: false,
+      title: 'Smart Hub',
+      theme: ThemeData(
+        // Define the default brightness and colors.
+        brightness: Brightness.light,
+        primaryColor: yPrimaryColor,
+        scaffoldBackgroundColor: Colors.white,
 
-          // Define the default font family.
-          // fontFamily: 'Georgia',
+        // Define the default font family.
+        // fontFamily: 'Georgia',
 
-          // Define the default `TextTheme`. Use this to specify the default
-          // text styling for headlines, titles, bodies of text, and more.
-          textTheme: const TextTheme(
-            displayMedium:
-                TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
-            displayLarge:
-                TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-            titleMedium: TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic),
-            titleSmall: TextStyle(fontSize: 18.0, fontStyle: FontStyle.italic),
-            titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-            bodyMedium: TextStyle(
-                color: secondaryColor, fontSize: 14.0, fontFamily: 'Hind'),
-          ),
+        // Define the default `TextTheme`. Use this to specify the default
+        // text styling for headlines, titles, bodies of text, and more.
+        textTheme: const TextTheme(
+          displayMedium: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
+          displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
+          titleMedium: TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic),
+          titleSmall: TextStyle(fontSize: 18.0, fontStyle: FontStyle.italic),
+          titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          bodyMedium: TextStyle(
+              color: secondaryColor, fontSize: 14.0, fontFamily: 'Hind'),
         ),
-        // home: const SplashScreen(),
-        initialRoute: '/',
-        routes: {
-          '/': (context) => const SplashScreen(),
-          '/home': (context) => const HomeScreen(),
-          '/details': (context) => const DetailsScreen(),
-        });
+      ),
+      // initialRoute: UserAppRoutes.splash,
+      initialRoute: UserAppRoutes.home,
+      onGenerateRoute: UserAppRouter.generateRoute,
+      // onGenerateRoute: BusinessAppRouter.generateRoute,
+      // onGenerateRoute: DeliveryAppRouter.generateRoute,
+    );
   }
 }

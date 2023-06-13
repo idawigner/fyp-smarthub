@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smarthub/user_module/components/user_app_routes.dart';
 import 'package:smarthub/user_module/screens/home/components/item_card.dart';
 
 class ItemList extends StatelessWidget {
@@ -17,7 +18,7 @@ class ItemList extends StatelessWidget {
             title: "Your Favourite food",
             shopName: "Near By",
             press: () {
-              Navigator.pushNamed(context, '/details');
+              Navigator.pushNamed(context, UserAppRoutes.details);
             },
           ),
           ItemCard(
@@ -25,7 +26,7 @@ class ItemList extends StatelessWidget {
             title: "Buy What you want",
             shopName: "Near By",
             press: () {
-              Navigator.pushNamed(context, '/details');
+              Navigator.pop(context);
             },
           ),
           ItemCard(
@@ -33,7 +34,7 @@ class ItemList extends StatelessWidget {
             title: "Health is Important",
             shopName: "Medical shops",
             press: () {
-              Navigator.pushNamed(context, '/details');
+              Navigator.pushNamed(context, UserAppRoutes.details);
             },
           ),
           ItemCard(

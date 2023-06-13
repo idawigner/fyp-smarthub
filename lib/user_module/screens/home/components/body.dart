@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:smarthub/user_module/screens/components/search_box.dart';
+import 'package:smarthub/user_module/screens/home/components/search_box.dart';
 import 'package:smarthub/user_module/screens/home/components/category_list.dart';
 import 'package:smarthub/user_module/screens/home/components/discount_card.dart';
 import 'package:smarthub/user_module/screens/home/components/item_list.dart';
