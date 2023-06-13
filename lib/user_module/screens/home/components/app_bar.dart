@@ -31,7 +31,10 @@ AppBar homeAppBar(BuildContext context) {
     ),
     actions: <Widget>[
       IconButton(
-        icon: SvgPicture.asset("assets/icons/notification.svg"),
+        icon: const Icon(
+          Icons.location_pin,
+          color: secondaryColor,
+        ),
         onPressed: () {},
       ),
     ],

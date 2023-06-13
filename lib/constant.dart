@@ -5,4 +5,4 @@ const rPrimaryColor = Color(0xFFFE0000);
 const secondaryColor = Color(0xFFB5BFD0);
 const darkColor = Color(0xFF1D2D3D);
 const TextColor = Color(0xFF50505D);
-const TextLightColor = Color(0xFF6A727D);
+const LightColor = Color(0xFF6A727D);
