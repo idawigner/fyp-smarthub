@@ -5,17 +5,18 @@ class CategoryItem extends StatelessWidget {
   final String title;
   final bool isActive;
   final Function press;
+
   const CategoryItem({
-    super.key,
+    Key? key,
     required this.title,
     this.isActive = false,
     required this.press,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => press(),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
@@ -24,7 +25,7 @@ class CategoryItem extends StatelessWidget {
               title,
               style: isActive
                   ? const TextStyle(
-                      color: TextColor,
+                      color: textColor,
                       fontWeight: FontWeight.bold,
                     )
                   : const TextStyle(fontSize: 12),
@@ -35,9 +36,10 @@ class CategoryItem extends StatelessWidget {
                 height: 3,
                 width: 22,
                 decoration: BoxDecoration(
-                    color: yPrimaryColor,
-                    borderRadius: BorderRadius.circular(10)),
-              )
+                  color: yPrimaryColor,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
           ],
         ),
       ),

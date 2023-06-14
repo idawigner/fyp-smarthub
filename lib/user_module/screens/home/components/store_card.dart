@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:smarthub/constant.dart';
 
-class ItemCard extends StatelessWidget {
-  final String description, itemName, imgSource;
+class StoreCard extends StatelessWidget {
+  final String description, shopName, imgSource;
   final VoidCallback press;
 
-  const ItemCard({
+  const StoreCard({
     Key? key,
     required this.imgSource,
-    required this.itemName,
+    required this.shopName,
     required this.description,
     required this.press,
   }) : super(key: key);
@@ -56,8 +56,9 @@ class ItemCard extends StatelessWidget {
                 ),
                 SizedBox(
                   width: maxTextWidth,
+                  // width: cardWidth * 0.8, // Limit width to 80% of card width
                   child: Text(
-                    itemName,
+                    shopName,
                     maxLines: 1,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,

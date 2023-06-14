@@ -43,8 +43,7 @@ class MyApp extends StatelessWidget {
               color: secondaryColor, fontSize: 14.0, fontFamily: 'Hind'),
         ),
       ),
-      // initialRoute: UserAppRoutes.splash,
-      initialRoute: UserAppRoutes.home,
+      initialRoute: UserAppRoutes.splash,
       onGenerateRoute: UserAppRouter.generateRoute,
 
       // onGenerateRoute: BusinessAppRouter.generateRoute,

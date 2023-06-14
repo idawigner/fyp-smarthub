@@ -15,7 +15,7 @@ class DiscountCard extends StatelessWidget {
         children: [
           const Text(
             "Discount and offer",
-            style: TextStyle(fontWeight: FontWeight.bold, color: TextColor),
+            style: TextStyle(fontWeight: FontWeight.bold, color: textColor),
           ),
           Container(
             margin: const EdgeInsets.symmetric(vertical: 20),

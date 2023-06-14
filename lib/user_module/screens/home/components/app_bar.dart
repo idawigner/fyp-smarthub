@@ -32,7 +32,7 @@ AppBar homeAppBar(BuildContext context) {
     actions: <Widget>[
       IconButton(
         icon: const Icon(
-          Icons.location_pin,
+          Icons.location_on_outlined,
           color: secondaryColor,
         ),
         onPressed: () {},
