@@ -36,9 +36,15 @@ class MyApp extends StatelessWidget {
         textTheme: const TextTheme(
           displayMedium: TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold),
           displayLarge: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-          titleMedium: TextStyle(fontSize: 24.0, fontStyle: FontStyle.italic),
-          titleSmall: TextStyle(fontSize: 18.0, fontStyle: FontStyle.italic),
-          titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
+          titleMedium: TextStyle(
+            fontSize: 24.0,
+          ),
+          titleSmall: TextStyle(
+            fontSize: 18.0,
+          ),
+          titleLarge: TextStyle(
+            fontSize: 36.0,
+          ),
           bodyMedium: TextStyle(
               color: secondaryColor, fontSize: 14.0, fontFamily: 'Hind'),
         ),

@@ -3,10 +3,14 @@ import 'package:smarthub/constant.dart';
 
 class SearchBox extends StatefulWidget {
   final ValueChanged<String> onChanged;
+  final bool isFocused;
+  final ValueChanged<bool> onFocusChanged;
 
   const SearchBox({
     Key? key,
     required this.onChanged,
+    required this.isFocused,
+    required this.onFocusChanged,
   }) : super(key: key);
 
   @override
@@ -15,7 +19,25 @@ class SearchBox extends StatefulWidget {
 
 class _SearchBoxState extends State<SearchBox> {
   final TextEditingController _textEditingController = TextEditingController();
-  bool _isFocused = false;
+  final FocusNode _focusNode = FocusNode();
+
+  @override
+  void initState() {
+    super.initState();
+    _focusNode.addListener(_onFocusChanged);
+  }
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    _focusNode.removeListener(_onFocusChanged);
+    _focusNode.dispose();
+    super.dispose();
+  }
+
+  void _onFocusChanged() {
+    widget.onFocusChanged(_focusNode.hasFocus);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,26 +46,35 @@ class _SearchBoxState extends State<SearchBox> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         border: Border.all(
-          color: _isFocused ? yPrimaryColor : secondaryColor.withOpacity(0.32),
+          color: widget.isFocused
+              ? yPrimaryColor
+              : secondaryColor.withOpacity(0.32),
         ),
       ),
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Icon(
-              Icons.search_rounded,
-              color: _isFocused ? yPrimaryColor : secondaryColor,
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+            child: IconButton(
+              onPressed: () {
+                _focusNode.unfocus();
+              },
+              icon: Icon(
+                Icons.search_rounded,
+                color: widget.isFocused ? yPrimaryColor : secondaryColor,
+              ),
             ),
           ),
           Expanded(
             child: TextField(
               controller: _textEditingController,
               onChanged: widget.onChanged,
+              focusNode: _focusNode,
               onTap: () {
-                setState(() {
-                  _isFocused = true;
-                });
+                _focusNode.requestFocus();
+              },
+              onEditingComplete: () {
+                _focusNode.unfocus();
               },
               style: const TextStyle(
                 fontSize: 18,
@@ -51,22 +82,23 @@ class _SearchBoxState extends State<SearchBox> {
               ),
               decoration: InputDecoration(
                 border: InputBorder.none,
-                hintText: "Search Here",
+                hintText: "Search Here...",
                 hintStyle: TextStyle(
-                  fontSize: 18,
-                  color: _isFocused ? yPrimaryColor : secondaryColor,
+                  fontSize: 16,
+                  color: widget.isFocused ? yPrimaryColor : secondaryColor,
                 ),
               ),
             ),
           ),
-          if (_textEditingController.text.isNotEmpty)
+          if (widget.isFocused)
             IconButton(
               onPressed: () {
                 _textEditingController.clear();
+                _focusNode.unfocus();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.close,
-                color: _isFocused ? yPrimaryColor : secondaryColor,
+                color: yPrimaryColor,
               ),
             ),
         ],

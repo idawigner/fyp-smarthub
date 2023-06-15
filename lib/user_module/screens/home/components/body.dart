@@ -15,6 +15,7 @@ class Body extends StatefulWidget {
 
 class _BodyState extends State<Body> {
   int _selectedIndex = 0;
+  bool _isSearchBoxFocused = false;
 
   void _selectCategory(int index) {
     setState(() {
@@ -22,24 +23,45 @@ class _BodyState extends State<Body> {
     });
   }
 
+  void _resetSearchBoxColors() {
+    setState(() {
+      _isSearchBoxFocused = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SearchBox(
-          onChanged: (value) {},
-        ),
-        CategoryList(
-          selectedIndex: _selectedIndex,
-          onCategorySelected: _selectCategory,
-        ),
-        CategoryContent(selectedIndex: _selectedIndex),
-        const SizedBox(height: 10),
-        PopularItems(selectedIndex: _selectedIndex),
-        const FoodItemList(),
-        const DiscountCard(),
-      ],
+    bool isKeyboard = MediaQuery.of(context).viewInsets.bottom != 0;
+    return GestureDetector(
+      onTap: () {
+        if (!isKeyboard) {
+          FocusScope.of(context).unfocus();
+          _resetSearchBoxColors();
+        }
+      },
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SearchBox(
+            onChanged: (value) {},
+            isFocused: _isSearchBoxFocused,
+            onFocusChanged: (bool focused) {
+              setState(() {
+                _isSearchBoxFocused = focused;
+              });
+            },
+          ),
+          CategoryList(
+            selectedIndex: _selectedIndex,
+            onCategorySelected: _selectCategory,
+          ),
+          CategoryContent(selectedIndex: _selectedIndex),
+          const SizedBox(height: 10),
+          PopularItems(selectedIndex: _selectedIndex),
+          const FoodItemList(),
+          const DiscountCard(),
+        ],
+      ),
     );
   }
 }
