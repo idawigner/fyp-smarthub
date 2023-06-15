@@ -45,7 +45,6 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: UserAppRoutes.splash,
       onGenerateRoute: UserAppRouter.generateRoute,
-
       // onGenerateRoute: BusinessAppRouter.generateRoute,
       // onGenerateRoute: DeliveryAppRouter.generateRoute,
     );
