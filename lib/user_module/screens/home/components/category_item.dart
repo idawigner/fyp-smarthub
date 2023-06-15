@@ -27,8 +27,8 @@ class CategoryItem extends StatelessWidget {
                   ? const TextStyle(
                       color: textColor,
                       fontWeight: FontWeight.bold,
-                    )
-                  : const TextStyle(fontSize: 12),
+                      fontSize: 12)
+                  : const TextStyle(fontSize: 13),
             ),
             if (isActive)
               Container(

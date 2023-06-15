@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:smarthub/constant.dart';
 import 'package:smarthub/user_module/components/user_app_routes.dart';
 
+// comment by DI;
 // void main() => runApp(const MyApp());
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

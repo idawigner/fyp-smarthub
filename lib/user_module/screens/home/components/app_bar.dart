@@ -23,7 +23,7 @@ AppBar homeAppBar(BuildContext context) {
             style: TextStyle(color: yPrimaryColor),
           ),
           TextSpan(
-            text: "Hub",
+            text: " Hub",
             style: TextStyle(color: rPrimaryColor),
           ),
         ],
