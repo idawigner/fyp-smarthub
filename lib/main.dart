@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:smarthub/constant.dart';
 import 'package:smarthub/user_module/components/user_app_routes.dart';
 
-// comment by DI;
+// About: A bad friend!
 // void main() => runApp(const MyApp());
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,7 +16,6 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  //you are fool
 
   // This widget is the root of your application.
   @override
