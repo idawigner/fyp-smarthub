@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:smarthub/constant.dart';
 
 class UserBottomNavBar extends StatelessWidget {
   const UserBottomNavBar({
@@ -27,16 +27,29 @@ class UserBottomNavBar extends StatelessWidget {
         children: [
           IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset("assets/icons/home.svg")),
+              icon: const Icon(
+                Icons.home_rounded,
+                color: yPrimaryColor,
+              )),
           IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset("assets/icons/following.svg")),
+              icon: Icon(
+                Icons.favorite_outline_rounded,
+                color: secondaryColor.withOpacity(0.7),
+              )),
           IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset("assets/icons/Glyph.svg")),
+              icon: Icon(
+                Icons.shopping_cart_outlined,
+                color: secondaryColor.withOpacity(0.7),
+              )),
           IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset("assets/icons/person.svg"))
+            onPressed: () {},
+            icon: Icon(
+              Icons.person_outline_rounded,
+              color: secondaryColor.withOpacity(0.7),
+            ),
+          )
         ],
       ),
     );

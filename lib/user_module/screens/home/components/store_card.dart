@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:smarthub/constant.dart';
 
 class StoreCard extends StatelessWidget {
   final String description, shopName, imgSource;
@@ -15,13 +14,15 @@ class StoreCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cardWidth = MediaQuery.of(context).size.width * 0.5;
-    final imageWidth = cardWidth * 0.55;
-    final imageHeight = cardWidth * 0.5;
+    final cardWidth = MediaQuery.of(context).size.width * 0.8;
+    final cardHeight = MediaQuery.of(context).size.height * 0.3;
+    final imageWidth = cardWidth;
+    final imageHeight = cardHeight * 0.5;
     double maxTextWidth = cardWidth * 0.8;
 
     return Container(
       width: cardWidth,
+      height: cardHeight,
       margin: const EdgeInsets.only(left: 20, right: 15, top: 20, bottom: 20),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -43,11 +44,7 @@ class StoreCard extends StatelessWidget {
             child: Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(bottom: 15),
-                  decoration: BoxDecoration(
-                    color: yPrimaryColor.withOpacity(0.13),
-                    shape: BoxShape.circle,
-                  ),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: Image.asset(
                     imgSource,
                     width: imageWidth,
@@ -56,7 +53,6 @@ class StoreCard extends StatelessWidget {
                 ),
                 SizedBox(
                   width: maxTextWidth,
-                  // width: cardWidth * 0.8, // Limit width to 80% of card width
                   child: Text(
                     shopName,
                     maxLines: 1,
@@ -69,7 +65,6 @@ class StoreCard extends StatelessWidget {
                 ),
                 SizedBox(
                   width: maxTextWidth,
-                  // width: cardWidth * 0.8, // Limit width to 80% of card width
                   child: Text(
                     description,
                     maxLines: 1,
